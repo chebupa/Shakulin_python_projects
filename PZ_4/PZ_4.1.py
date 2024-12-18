@@ -4,12 +4,10 @@
 
 while True:
     try:
-        n = int(input("Введите целое число N (>0): "))
-        result: int
-
+        n = int(input("Введите число N (>0): "))
+        result = 0
         for i in range(1, n + 1):
-            result = sum(-1 ** (i + 1)) * i
-
-        print(f"Результат: {result}")
+            result += (-1) ** (i + 1) * (1 + i / 10)
+        print(result)
     except ValueError:
-        print("Неверный ввод")
+        print("Неправильный ввод")
