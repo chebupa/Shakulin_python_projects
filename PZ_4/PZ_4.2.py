@@ -6,7 +6,7 @@ def has_digit_two(n):
     while n > 0:
         if n % 10 == 2:
             return True
-        n //= 10
+        n //= 10 # удаляет последнюю цифру числа
     return False
 
 # Пример использования
