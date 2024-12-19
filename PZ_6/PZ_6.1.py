@@ -24,6 +24,7 @@ while True:
         result = increase_even_numbers(lst)
 
         print("Результат:", result)
+        break
     except ValueError:
         print("Неправильный ввод")
 

@@ -8,7 +8,7 @@ def create_new_list(a: [int]):
     total_sum = 0
     for i in range(len(a)):
         total_sum += a[i]  # Добавляем элемент A[i] к сумме
-        b.append(total_sum)  # Добавляем текущую сумму в список B
+        b.append(total_sum)
     return b
 
 
@@ -20,6 +20,7 @@ while True:
         B = create_new_list(A)
 
         print("Новый список B:", B)
+        break
     except ValueError:
         print("Неправильный ввод")
 

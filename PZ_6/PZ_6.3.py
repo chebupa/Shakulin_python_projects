@@ -25,6 +25,7 @@ while True:
         result = shift_list_right(A, K)
 
         print("Результат сдвига:", result)
+        break
     except ValueError:
         print("Неправильный ввод")
 

@@ -15,6 +15,7 @@ while True:
         N = int(input("Введите число N (>0): "))
         if N > 0:
             print(has_digit_two(N))
+            break
         else:
             print("Ошибка: число должно быть больше 0")
     except ValueError:
