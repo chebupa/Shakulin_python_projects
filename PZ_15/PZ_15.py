@@ -30,10 +30,31 @@ class Main:
         self.conn.commit()
 
     def add_trade_point(self):
-        floor = int(input("Введите этаж: "))
-        area = float(input("Введите площадь (в кв.м): "))
-        air_conditioner = input("Есть кондиционер? (да/нет): ").strip().lower() == 'да'
-        daily_rent = float(input("Введите стоимость аренды в день: "))
+        while True:
+            try:
+                floor = int(input("Введите этаж: "))
+                break
+            except ValueError:
+                print("Ошибка ввода этажа. Введите целое число.")
+        while True:
+            try:
+                area = float(input("Введите площадь (в кв.м): "))
+                break
+            except ValueError:
+                print("Ошибка ввода площади. Введите число.")
+        while True:
+            ac_input = input("Есть кондиционер? (да/нет): ").strip().lower()
+            if ac_input in ('да', 'нет'):
+                air_conditioner = (ac_input == 'да')
+                break
+            else:
+                print("Ошибка ввода. Введите 'да' или 'нет'.")
+        while True:
+            try:
+                daily_rent = float(input("Введите стоимость аренды в день: "))
+                break
+            except ValueError:
+                print("Ошибка ввода стоимости. Введите число.")
 
         cursor = self.conn.cursor()
         cursor.execute('''
@@ -58,7 +79,12 @@ class Main:
             print()
 
     def delete_trade_point(self):
-        trade_point_id = int(input("Введите ID торговой точки для удаления: "))
+        while True:
+            try:
+                trade_point_id = int(input("Введите ID торговой точки для удаления: "))
+                break
+            except ValueError:
+                print("Ошибка ввода ID. Введите целое число.")
         cursor = self.conn.cursor()
         cursor.execute('SELECT * FROM TradePoint WHERE id = ?', (trade_point_id,))
         point = cursor.fetchone()
