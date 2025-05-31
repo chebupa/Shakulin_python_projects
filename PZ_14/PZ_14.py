@@ -18,7 +18,6 @@ def extract_domains_with_regex(file_path: str) -> list[str]:
     return domains
 
 
-# Пример использования:
 domains = extract_domains_with_regex("radio_stations.txt")
 for domain in domains:
     print(domain)

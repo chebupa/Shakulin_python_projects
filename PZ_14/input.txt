@@ -1,0 +1,8 @@
+Это пример текстового файла.
+Здесь есть несколько e-mail адресов
+test@example.com
+someemail@mail.ru
+gogglemail@gmail.com
+another_email123@sub.domain.org
+А еще вот: invalid-email, notanemail@, email@.com, and a valid one:
+support@my-company.io
