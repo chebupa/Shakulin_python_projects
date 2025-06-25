@@ -8,6 +8,7 @@ import pickle
 
 
 class Bank:
+
     money_sum: float = 0.0
     percent: float = 0.0
 
@@ -23,6 +24,7 @@ class Bank:
         self.money_sum -= self.money_sum * self.percent / 100
         return self.money_sum
 
+
 def save_def(bank_objects: list[Bank], filename: str) -> None:
     with open(filename, 'wb') as file:
         pickle.dump(bank_objects, file)
@@ -31,14 +33,14 @@ def load_def(filename: str) -> list[Bank]:
     with open(filename, 'rb') as file:
         return pickle.load(file)
 
-# Пример использования
+
 if __name__ == "__main__":
     b1 = Bank(1000, 5)
     b2 = Bank(2000, 3)
     b3 = Bank(1500, 4)
 
-    save_def([b1, b2, b3], 'banks.txt')
+    save_def([b1, b2, b3], 'banks.bin')
 
-    loaded_banks = load_def('banks.dat')
+    loaded_banks = load_def('banks.bin')
     for bank in loaded_banks:
         print(f"Сумма: {bank.money_sum}, Процент: {bank.percent}")
