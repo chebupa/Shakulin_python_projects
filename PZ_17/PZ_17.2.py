@@ -5,7 +5,6 @@
 # Даны строки S и S0. Найти количество вхождений строки S0 в строку S.
 
 import tkinter as tk
-from tkinter import ttk
 
 
 class MainWindow(tk.Frame):
@@ -19,16 +18,16 @@ class MainWindow(tk.Frame):
         frame = tk.Frame(self)
         frame.pack(pady="5")
 
-        tk.Label(frame, text="Введите строку 1: ").grid(row=0, column=0, sticky="e")
+        tk.Label(frame, text="Введите строку 1: ").grid(row=0, column=0)
         self.entryOne = tk.Entry(frame)
         self.entryOne.grid(row=0, column=1)
 
-        tk.Label(frame, text="Введите строку 2: ").grid(row=1, column=0, sticky="e")
+        tk.Label(frame, text="Введите строку 2: ").grid(row=1, column=0)
         self.entryTwo = tk.Entry(frame)
         self.entryTwo.grid(row=1, column=1)
 
         self.result_label = tk.Label(frame, text="")
-        self.result_label.grid(row=2, column=0, columnspan=2, pady=5)
+        self.result_label.grid(row=2, column=0, pady=5)
 
         button = tk.Button(frame, text="Посчитать", command=self.calculate)
         button.grid(row=3, column=0, columnspan=2)

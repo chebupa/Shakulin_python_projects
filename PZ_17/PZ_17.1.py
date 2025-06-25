@@ -33,13 +33,13 @@ class RegistrationForm(tk.Frame):
         form_frame = tk.Frame(self, bg='pink')
         form_frame.pack(pady=5)
 
-        tk.Label(form_frame, text="Введите регистрационное имя", bg='pink').grid(row=0, column=0, sticky='e')
+        tk.Label(form_frame, text="Введите регистрационное имя", bg='pink').grid(row=0, column=0)
         tk.Entry(form_frame).grid(row=0, column=1)
 
-        tk.Label(form_frame, text="Введите пароль", bg='pink').grid(row=1, column=0, sticky='e')
+        tk.Label(form_frame, text="Введите пароль", bg='pink').grid(row=1, column=0)
         tk.Entry(form_frame, show='*').grid(row=1, column=1)
 
-        tk.Label(form_frame, text="Подтвердите пароль", bg='pink').grid(row=2, column=0, sticky='e')
+        tk.Label(form_frame, text="Подтвердите пароль", bg='pink').grid(row=2, column=0)
         tk.Entry(form_frame, show='*').grid(row=2, column=1)
 
     def create_age_section(self):
@@ -65,7 +65,7 @@ class RegistrationForm(tk.Frame):
     def create_format_section(self):
         tk.Label(self, text="Какой формат данных является для вас предпочтительным?", bg='pink').pack()
         self.format_combo = ttk.Combobox(self, values=["HTML", "Plain text"])
-        self.format_combo.current(0)
+        self.format_combo.current
         self.format_combo.pack()
 
     def create_authors_section(self):
